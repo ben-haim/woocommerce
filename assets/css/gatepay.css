@@ -1,0 +1,21 @@
+.comntainerGatPay{width:600px; min-height:400px; margin:auto}
+.rowHeaderGatepay{width:33%; margin:0px; float:left;}
+@media only screen and (max-width: 600px) {
+  .comntainerGatPay{width:100%;}
+  
+ 
+}
+
+.validImgGatepay{position:relative; margin:auto; height:16px;  top:10px; z-index:9999}
+.lineHeaderGatepay{position:relative;top:20px; width:100%; height:4px; background-repeat: repeat-x;; z-index:9999;background-image: url('images/line.png');}
+.headerGatepayTit{text-align:center;position:relative; z-index:9999;top:15px;}
+#contentGatepay{ background:#F5F5F5; margin-top:20px; min-height:300px; padding:20px; border-bottom-left-radius:25px;border-bottom-right-radius:25px;}
+#methodGatepay{text-align:center;width:100%;}
+.listBitcoinsImg{border-radius: 25px;
+  background: #fff;
+  padding: 10px;
+  cursor:pointer;
+  margin:20px;
+  border-color:#06F;
+  height: 70px; width:96%;margin: auto; text-align:center;border:2px solid #fff}
+.listBitcoinsImg:hover{ border:2px solid #296FF2; }
