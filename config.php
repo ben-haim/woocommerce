@@ -37,11 +37,12 @@ $Network_Cryptocurrencies=array(
                             'BTC' => 'BTC (Bitcoin)',
                             'BCH' => 'BCH (Bitcoin Cash)',
 							'ETH' => 'ETH (Ethereum)',
-							'LTC' => 'LTC (Litecoin)',
+							'LTC' => 'LTC (Litecoin)'
+                                /*
 							'DASH' => 'DASH (Dash)',
 							'DOGE' => 'DOGE (Dogecoin)',
 							'BSV' => 'BSV (Bitcoin SV)'
-							
+							*/
 							);
 function delete_spacesNew($content)
 {
