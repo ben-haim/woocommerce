@@ -28,7 +28,7 @@ function editCrypto()
 		{
 			die('{"result":"success","payment_protocol_uri":"bitcoin:paid?amount=xxx","invoice_id":'.$trans["transaction_id"].'}');
 		}
-		$url="https://gatepay.xyz/api/check.php?invoice_id=".$trans["transaction_id"];
+		$url="https://gatepay.xyz/payment_api/check.php?invoice_id=".$trans["transaction_id"];
 		$res=runCurl_Json($url);
 		$invoiceData = json_decode($res);
 		
@@ -41,7 +41,7 @@ function editCrypto()
 			die('{"result":"success","payment_protocol_uri":"bitcoin:paid?amount=xxx","invoice_id":'.$trans["transaction_id"].'}');
 		}
 	}
-	$url = "https://gatepay.xyz/api/request.php?account_id=".$account_id."&token_id=".$token_id."&network=".$network."&currency_fiat=".$currency."&amount_fiat=".urlencode($amount);
+	$url = "https://gatepay.xyz/payment_api/fetch.php?account_id=".$account_id."&business_id=".$token_id."&network=".$network."&currency_fiat=".$currency."&amount_fiat=".urlencode($amount);
 
 	$res=runCurl_Json($url);
 	$invoiceData = json_decode($res);
@@ -62,7 +62,7 @@ function gatepay_checkout_insert_order_note($order_id = null, $transaction_id = 
 		if($trans["transaction_status"]!="paid")
 		{
 			
-			$url="https://gatepay.xyz/api/check.php?invoice_id=".$trans["transaction_id"];
+			$url="https://gatepay.xyz/payment_api/check.php?invoice_id=".$trans["transaction_id"];
 			$res=runCurl_Json($url);
 			$invoiceData = json_decode($res);
 			
@@ -113,7 +113,7 @@ function gatewapyjob_function2($tran_id) {
 	
 	global $db;
 	
-	$url="https://gatepay.xyz/api/check.php?invoice_id=".$tran_id;
+	$url="https://gatepay.xyz/payment_api/check.php?invoice_id=".$tran_id;
 	$res=runCurl_Json($url);
 	$invoiceData = json_decode($res);
 	
