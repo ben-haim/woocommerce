@@ -239,7 +239,7 @@ function wc_gatepay_checkout_gateway_init()
                         'title' => __('Logo', 'woocommerce'),
                         'type' => 'text',
                         'description' => __('icon of the payment gateway.', 'woocommerce'),
-                        'default' =>  'https://static.wixstatic.com/media/209249_43f4129315444d7ca8b6cc344de50fc0~mv2.png/v1/fill/w_139,h_39,al_c,q_80,usm_0.66_1.00_0.01/gpy.webp'
+                        'default' =>  'https://gatepay.xyz/images/gpy.webp'
 
                     ),
                      'gatepay_checkout_account_id' => array(
@@ -251,10 +251,10 @@ function wc_gatepay_checkout_gateway_init()
 
                     ),
                     'gatepay_checkout_token' => array(
-                        'title' => __('Token', 'woocommerce'),
-                        'label' => __('Token', 'woocommerce'),
+                        'title' => __('Business ID', 'woocommerce'),
+                        'label' => __('Business ID', 'woocommerce'),
                         'type' => 'text',
-                        'description' => 'Your <b>token </b>',
+                        'description' => 'Your <b>Business ID (Token ID) </b>',
                         'default' => '',
 
                     ),
@@ -287,6 +287,7 @@ function wc_gatepay_checkout_gateway_init()
                         'description' => '',
                         'default' => '0',
                     ),
+                                           /*
 					 'DASH_GatePay' => array(
                         'title' => "",
                         'label' => __('DASH (Dash Mainnet)', 'woocommerce'),
@@ -308,7 +309,7 @@ function wc_gatepay_checkout_gateway_init()
                         'description' => '',
                         'default' => '0',
                     ),
-					
+					*/
 				
               
                   
@@ -1031,7 +1032,7 @@ function gatewapyjob_function() {
 		if($tr["transaction_status"]=="new")
 		{
 			
-			$url="https://gatepay.xyz/api/check.php?invoice_id=".$tr["transaction_id"];
+			$url="https://gatepay.xyz/payment_api/check.php?invoice_id=".$tr["transaction_id"];
 			$res=runCurl_Json($url);
 			$invoiceData = json_decode($res);
 			
